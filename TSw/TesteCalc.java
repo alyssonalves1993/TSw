@@ -1,4 +1,7 @@
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 public class TesteCalc {
@@ -6,6 +9,12 @@ public class TesteCalc {
 	Calc c = new Calc();
 
 	// declarando as varíaveis
+	@Before
+	public void Inicializar(){
+	String num1 = null;
+	String num2 = null;
+	}
+	
 	@Test
 	public void TesteSoma() {
 
@@ -26,6 +35,22 @@ public class TesteCalc {
 
 		result = c.soma(num1,num2);
 
-		assertEquals(2, result);
+		assertEquals(0, result);
+	}
+	@Test
+	public void VerificarNulo() {
+		String num1 = null;
+		String num2 = null;
+		int result;
+
+		result = c.soma(num1,num2);
+
+		assertEquals(0, result);
+	}
+	@After
+	public void Finalizar(){
+	String num1 = null;
+	String num2 = null;
+	Double result = null;
 	}
 }
