@@ -37,8 +37,9 @@ public class TesteCalc {
 
 		assertEquals(0, result);
 	}
-	@Test
-	public void VerificarNulo() {
+	//incluindo timeout para entendimento de teste
+	@Test(timeout=1000)
+	public void VerificarTempoExecucao() {
 		String num1 = null;
 		String num2 = null;
 		int result;
@@ -47,6 +48,18 @@ public class TesteCalc {
 
 		assertEquals(0, result);
 	}
+	//informar que esperava que desse um exception de não possibilidade de divisão por 0 
+	@Test(expected = ArithmeticException.class)
+	public void TesteLancarExecaoDividirPorZero() {
+		String num1 = "2";
+		String num2 = "0";
+		double result;
+
+		result = c.dividir(num1,num2);
+			
+		assertEquals(0, result);
+	}
+	
 	@After
 	public void Finalizar(){
 	String num1 = null;

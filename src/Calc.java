@@ -9,13 +9,13 @@ public class Calc implements Calculadora {
 	}
 
 	public double dividir(String num1, String num2) {
-		double result = 1.5;
+		double result = Integer.parseInt(num1) / Integer.parseInt(num2);
 		return result;
 	}
 
 	public double raizQuadrada(String num) {
-		double result = 1.5;
-		return result;
+		num = "2";
+		return Double.parseDouble(num);
 	}
 
 }
